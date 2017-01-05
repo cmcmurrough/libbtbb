@@ -26,6 +26,9 @@ set(MINOR_VERSION 4)
 project(libbtbb_all)
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/modules)
 
+# set build type to release
+set(CMAKE_BUILD_TYPE "Release")
+
 set(INSTALL_DEFAULT_BINDIR "bin" CACHE STRING "Appended to CMAKE_INSTALL_PREFIX")
 
 set(BUILD_SHARED_LIB ON CACHE BOOL "Build shared library")
@@ -36,7 +39,7 @@ set( VERSION ${MAJOR_VERSION}.${MINOR_VERSION} )
 add_definitions( -DVERSION="${VERSION}" )
 
 # Comment the following out for releases.
-set(CMAKE_C_FLAGS "$ENV{CFLAGS}" CACHE STRING "C Flags")
+#set(CMAKE_C_FLAGS "$ENV{CFLAGS}" CACHE STRING "C Flags")
 
 add_subdirectory(lib)
 if(ENABLE_PYTHON)
